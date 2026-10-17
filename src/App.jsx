@@ -6,21 +6,21 @@ const birthday = new Date("2026-11-02T00:00:00+03:00");
 
 const memories = [
   {
-    image: "/photo1.jpeg",
+    image: `${import.meta.env.BASE_URL}photo1.jpeg`,
     title: "Our Birthday Girl 🌷",
     text: "A beautiful face deserves a beautiful frame. 💗",
     color: "rose",
     label: "My favorite photo",
   },
   {
-    image: "/photo2.jpeg",
+    image: `${import.meta.env.BASE_URL}photo2.jpeg`,
     title: "A Little Piece of Art 🎨",
     text: "Something you made, something worth keeping.",
     color: "lilac",
     label: "Hand-drawn memory #1",
   },
   {
-    image: "/photo3.jpeg",
+    image: `${import.meta.env.BASE_URL}photo3.jpeg`,
     title: "Another Little Treasure 🦋",
     text: "The little things can hold the sweetest memories.",
     color: "peach",
@@ -95,6 +95,7 @@ function App() {
     };
 
     window.addEventListener("keydown", handleKeyDown);
+
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedPhotoIndex]);
 
@@ -588,10 +589,7 @@ function App() {
             }
           }}
         >
-          <div
-            className="birthday-confetti-layer"
-            aria-hidden="true"
-          >
+          <div className="birthday-confetti-layer" aria-hidden="true">
             {Array.from({ length: 42 }, (_, index) => (
               <span
                 className="birthday-confetti"
@@ -636,9 +634,7 @@ function App() {
               NOVEMBER 2, 2026 · YOUR SPECIAL DAY
             </span>
 
-            <h2 id="surprise-title">
-              Happy Birthday, Lummy! 💗
-            </h2>
+            <h2 id="surprise-title">Happy Birthday, Lummy! 💗</h2>
 
             <p>
               Today is all about celebrating you! May every new day
